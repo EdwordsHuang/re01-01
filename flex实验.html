@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex 布局</title>
+    <!--安装程序-->
+    <link rel="manifest" href="seochecker-manifest-2024.json">
+    <style>
+        body{
+            margin: 0;
+            height: 100vh;
+            background-color: aliceblue;
+        }
+        /* * { 
+            border: 1px solid black; 
+        } */
+        .yinying {
+            box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px,
+          rgb(0 0 0 / 14%) 0px 1px 1px 0px, rgb(0 0 0 / 12%) 0px 1px 3px 0px;
+        }
+        .flex {
+            display: flex;
+        }
+        .baise {
+            background-color: white;
+        }
+        .flex1 {
+            flex: 1;
+        }
+        .column {
+            flex-direction: column;
+        }
+        .mg8 {
+            margin: 8px;
+        }
+        .mgr8 {
+            margin-right: 8px;
+        }
+        .mgt8 {
+            margin-top: 8px;
+        }
+        .daohang {
+            padding: 10px 20px;
+            border-bottom: 1px solid rgb(148, 141, 141);
+            font-size: 14px;
+            color: rgb(120, 25, 25);
+        }
+        /* 当屏幕宽度小于600px是改变css（手机端） */
+        @media (max-width:600px) {
+            .ceBian {
+                display: none;
+            }
+            .neirong {
+                flex-direction: column;
+            }
+            .shujukuai {
+                flex-direction: column;
+            }
+            .youqu {
+                margin-left: 8px;
+            }
+            .shuju {
+                margin: 0 0 8px;
+                flex: auto;
+            }
+        }
+        .neirong::-webkit-scrollbar{
+            display: none;
+        }
+    </style>
+</head>
+<body class="flex">
+    <!--边框蓝-->
+    <div style="width:200px; z-index: 2;" class="baise yinying ceBian">
+        <!--头像-->
+        <div style="padding: 10px; align-items: center; justify-content: center; border-bottom: 1px solid #999;" class="flex column">
+            <img 
+             src="https://i.postimg.cc/0QyP6myQ/Wechat-IMG18.jpg" 
+             alt="头像" 
+             width="80px" 
+             height="80px">
+            <div style="margin-top: 10px;">Edwords</div>
+        </div>
+        <!--导航-->
+        <div class="flex1">
+            <div class="daohang">导航</div>
+            <div class="daohang">导航</div>
+            <div class="daohang">导航</div>
+            <div class="daohang">导航</div>
+        </div>
+    
+    </div>
+    <!--主栏目-->
+    <div class="flex1 flex column">
+        <!--头部栏目--> 
+        <div style="height: 60px; z-index: 1;" class="baise yinying"></div>   
+        <!--内容栏目--> 
+        <div style="overflow: auto" class="neirong flex1 flex">
+            <!--左区-->
+            <div style="flex: 3" class="flex column mg8">
+                <!--数据区-->
+                <div class="flex shujukuai">
+                    <!--数据块-->
+                    <div style="height: 100px" class="shuju flex1 baise mgr8 yinying"></div>
+                    <div style="height: 100px" class="shuju flex1 baise mgr8 yinying"></div>
+                    <div style="height: 100px" class="shuju flex1 baise mgr8 yinying"></div>
+                    <div style="height: 100px" class="shuju flex1 baise yinying"></div>
+                </div>
+                <!--列表区-->
+                <div class="flex column">
+                    <!--列表项-->
+                    <div style="height: 160px;" class="baise mgt8 yinying"></div>
+                    <div style="height: 160px;" class="baise mgt8 yinying"></div>
+                    <div style="height: 160px;" class="baise mgt8 yinying"></div>
+                    <div style="height: 160px;" class="baise mgt8 yinying"></div>
+                    <div style="height: 160px;" class="baise mgt8 yinying"></div>
+                    <div style="height: 160px;" class="baise mgt8 yinying"></div>
+                </div>
+            </div>
+            <!--右区-->
+            <div style="flex: 1" class="youqu flex column mgr8 mgt8">
+                <!--提示区-->
+                <div style="height: 150px;" class="baise yinying"></div>
+                <!--消息区-->
+                <div style="height: 300px;" class="baise mgt8 yinying"></div>
+            </div>
+        </div>     
+    </div>
+    <!--安装程序-->
+    <script>
+        if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function () {
+          navigator.serviceWorker.register("sw.js");
+        });
+      }
+    
+    </script>
+</body>
+</html>
